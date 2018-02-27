@@ -13,4 +13,10 @@ public class Exercise6
 	- Stop the whole computation when a thread wins.
 	- If no thread wins, stop and declare a draw.
 	*/
+
+
+
+	public static void main(String[] args) {
+
+    }
 }
