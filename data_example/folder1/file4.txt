@@ -1,0 +1,3 @@
+This is a file in a folder.
+It is also the fourth file.
+There is a third line of text in file 4.

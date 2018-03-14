@@ -1,0 +1,2 @@
+This is the first file in folder 2.
+It contains two lines of text.
