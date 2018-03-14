@@ -17,3 +17,8 @@ Consumers are threads. Threads are shutdown when a
 is at zero.
 Number of threads is kept track of with a 
 [`Phaser`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Phaser.html)
+
+## Exercise 19 Maybe working
+Same as exercise 18 with adding consumers and TERM. I do not think it will work because
+it is likely to submit a task to executor service after shutdown has been called on it.
+Executor service should not accept more tasks after shutdown. But apparently it can work.

@@ -11,7 +11,7 @@ import java.util.concurrent.*;
 /**
  * @author Fabrizio Montesi <fmontesi@imada.sdu.dk>
  */
-public class Exercise19_notWorking {
+public class Exercise19_maybeWorking {
 	/*
 	- Modify Exercise 18 such that:
 		* If a file starts with the string "SKIP", the consumer does not process
@@ -91,7 +91,7 @@ public class Exercise19_notWorking {
     public static void main(String[] args) {
         BlockingDeque<Path> deque = new LinkedBlockingDeque<>();
 
-        fileFinder(Paths.get("/Users/mads/data_example"), deque);
+        fileFinder(Paths.get("/Users/mads/university/concurrent-programming/cp2018/exam/data_example"), deque);
 
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
