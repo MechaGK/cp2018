@@ -42,6 +42,7 @@ public class Exercise19_maybeWorking {
     }
 
     public static void consume(BlockingDeque<Path> deque, ExecutorService executorService) {
+        System.out.println("Hello there");
         int charactersRead = 0;
         boolean terminated = false;
         while (!Thread.interrupted()) {
@@ -84,14 +85,20 @@ public class Exercise19_maybeWorking {
         System.out.println("I read " + charactersRead + " characters");
 
         if (terminated) {
-            executorService.submit(() -> consume(deque, executorService));
+            System.out.println("Before submit");
+            try {
+                executorService.submit(() -> consume(deque, executorService));
+            } catch (RejectedExecutionException e) {
+                e.printStackTrace();
+            }
+            System.out.println("After submit");
         }
     }
 
     public static void main(String[] args) {
         BlockingDeque<Path> deque = new LinkedBlockingDeque<>();
 
-        fileFinder(Paths.get("/Users/mads/university/concurrent-programming/cp2018/exam/data_example"), deque);
+        fileFinder(Paths.get("/Users/mads/data_example"), deque);
 
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
